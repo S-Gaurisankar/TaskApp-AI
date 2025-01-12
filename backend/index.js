@@ -52,10 +52,13 @@ app.post('/generate', async (req, res) => {
             geminiFormattedResponse = formatTasksForGemini(tasks, "other");
         }
 
-        const geminiPrompt = `You are a task management assistant. Given the following task data:\n\n${geminiFormattedResponse}\n\nRespond to the user's prompt: ${userPrompt}\nIf the user's prompt is not related to tasks, respond with "I'm sorry, I cannot help with that."\nIf the prompt is unclear to you respond with "I'm sorry. Please be more specific and try again."`;
+        const date_string = new Date().toISOString().split('T')[0];
+
+        const geminiPrompt = `You are a task management assistant.  The current date is ${date_string}. Given the following task data:\n\n${geminiFormattedResponse}\n\nRespond to the user's prompt: ${userPrompt}\nIf the user's prompt is not related to tasks, respond with "I'm sorry, I cannot help with that."\n
+       If the prompt is unclear to you respond requesting the user to be more specific, mention the details you require and kindly request them to try again."`;
 
         const generationConfig = {
-            temperature: 0.2,
+            temperature: 0.8,
             top_p: 0.95,
             top_k: 40,
             max_output_tokens: 8192,
