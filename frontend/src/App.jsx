@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import  { useState } from "react";
+import { TASK_APP_API_URL } from "../.env";
 
 function App() {
   const [prompt, setPrompt] = useState("");
@@ -12,8 +13,8 @@ function App() {
     setResponse(""); // Clear previous response
 
     try {
-      const res = await fetch("http://localhost:3000/generate", {
-      // const res = await fetch("https://taskappai.onrender.com/generate", {
+      // const res = await fetch("http://localhost:3000/generate", {
+      const res = await fetch(TASK_APP_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
