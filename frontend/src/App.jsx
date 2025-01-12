@@ -14,7 +14,7 @@ function App() {
 
     try {
       // const res = await fetch("http://localhost:3000/generate", {
-      const res = await fetch(TASK_APP_API_URL, {
+      const res = await fetch("https://taskappai.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
