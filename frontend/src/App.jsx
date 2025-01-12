@@ -12,7 +12,8 @@ function App() {
     setResponse(""); // Clear previous response
 
     try {
-      const res = await fetch("http://localhost:3000/generate", {
+      // const res = await fetch("http://localhost:3000/generate", {
+      const res = await fetch("https://taskappai.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
