@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import  { useState } from "react";
-import { TASK_APP_API_URL } from "../.env";
 
 function App() {
   const [prompt, setPrompt] = useState("");
